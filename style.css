@@ -1,0 +1,75 @@
+p {
+    margin: 0;
+}
+
+#channelList {
+    width: 600px;
+    height: 400px;
+    overflow: scroll;
+    margin: 0 auto;
+}
+
+
+.unactive {
+    display: none;
+}
+
+.chatTempContainer {
+    display: flex;
+}
+
+.myChat {
+    flex-direction: row-reverse;
+}
+
+.titleWrapper {
+    display: flex;
+}
+
+.containerLeft {
+    padding: 10px;
+}
+
+.containerRight {
+    width: 300px;
+    padding: 0 10px;
+    padding-top: 10px;
+    word-wrap: break-word;
+}
+
+.containerRight .name {
+    padding-right: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+.containerRight .time {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 12px;
+}
+
+.containerRight .text {
+    padding: 5px;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.formWrapper {
+    display: flex;
+}
+
+#chatInput {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+.formWrapper #text {
+    width: 200px;
+    padding: 5px;
+    margin: 0 5px;
+}
