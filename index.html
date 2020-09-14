@@ -1,68 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
-    <div id="signIn" class="">
-        ログイン
-    </div>
+  <body>
+    <div id="signIn" class="">ログイン</div>
 
-    <div id="signOut" class="unactive">
-        ログアウト
-    </div>
+    <div id="signOut" class="unactive">ログアウト</div>
 
     <div id="channelList">
-        <ul></ul>
+      <ul></ul>
     </div>
 
     <template id="chatTmp">
-        <li class="chatTempContainer">
-            <div class="containerLeft">
-                <div class="icon">
-                    <img src="" alt="">
-                </div>
+      <li class="chatTempContainer">
+        <div class="containerLeft">
+          <div class="icon">
+            <img src="" alt="" />
+          </div>
+        </div>
+        <div class="containerRight">
+          <div class="titleWrapper">
+            <div class="name">
+              <p></p>
             </div>
-            <div class="containerRight">
-                <div class="titleWrapper">
-                    <div class="name">
-                        <p></p>
-                    </div>
-                    <div class="time">
-                        <p></p>
-                    </div>
-                </div>
-                <div class="text">
-                    <p></p>
-                </div>
+            <div class="time">
+              <p></p>
             </div>
-        </li>
+          </div>
+          <div class="text">
+            <p></p>
+          </div>
+        </div>
+      </li>
     </template>
 
-
     <div id="chatInput">
-        <form>
-            <div class="formWrapper">
-                <div class="text">
-                    <label for="text">ちゃっと</label>
-                    <input type="text" id="text" name="text">
-                </div>
-                <div>
-                    <input id="createChat" type="submit" value="送信する">
-                </div>
-            </div>
-        </form>
-
+      <form>
+        <div class="formWrapper">
+          <div class="text">
+            <label for="text">ちゃっと</label>
+            <input type="text" id="text" name="text" />
+          </div>
+          <div>
+            <input id="createChat" type="submit" value="送信する" />
+          </div>
+        </div>
+      </form>
     </div>
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
-    <script src="index.js" type="module"></script>
-</body>
-
+    <!-- <script src="index.js" type="module"></script> -->
+    <script src="dist/bundle.js" defer></script>
+  </body>
 </html>
