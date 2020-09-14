@@ -49,11 +49,9 @@ class Chat {
     const chatElement = document
       .querySelector<any>("#chatTmp")
       .content.cloneNode(true);
-    console.log(chatElement.querySelector(".chatTempContainer"));
     const chatNameElement = chatElement.querySelector(
       ".name p"
     ) as HTMLParagraphElement;
-    console.log(chatNameElement);
     const chatIconElement = chatElement.querySelector(
       ".icon img"
     )! as HTMLImageElement;
@@ -83,11 +81,9 @@ class FirebaseConnector {
   database: any;
   provider: any;
   constructor() {
-    console.log("3");
     firebase.initializeApp(firebaseConfig);
     this.database = firebase.database();
     this.provider = new firebase.auth.GoogleAuthProvider();
-    console.log("4");
   }
 
   store(chat) {
@@ -249,9 +245,7 @@ const checkLogin = () => {
 };
 
 //------------実行部分
-console.log("1");
 const firebaseIns = new FirebaseConnector();
-console.log("2");
 const accountIns = new Account();
 const cookieIns = new CookieHandler();
 renderAllItem();
@@ -261,7 +255,6 @@ checkLogin();
 const chatButton = document.querySelector("#createChat");
 chatButton.addEventListener("click", (e) => {
   e.preventDefault();
-  console.log(accountIns.isLoginA());
   if (!accountIns || !accountIns.isLoginA())
     return alert("ログインしてください");
   storeNewItem();
