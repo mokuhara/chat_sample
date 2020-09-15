@@ -1,3 +1,5 @@
+config/config.*
+trash/config.*
 config.*
 
 src/config.*

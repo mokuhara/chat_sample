@@ -1,4 +1,4 @@
-import { aiBotConfig } from "./config";
+import { aiBotConfig } from "../config/config";
 
 export class AIBot {
   constructor(private text: string) {}

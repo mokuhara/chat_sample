@@ -1,75 +1,86 @@
+body {
+  width: 800px;
+  margin: 0 auto;
+}
+
 p {
-    margin: 0;
+  margin: 0;
+}
+
+.auth {
+  height: 50px;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #channelList {
-    width: 600px;
-    height: 400px;
-    overflow: scroll;
-    margin: 0 auto;
+  width: 600px;
+  height: 400px;
+  overflow: scroll;
+  margin: 0 auto;
 }
 
-
 .unactive {
-    display: none;
+  display: none;
 }
 
 .chatTempContainer {
-    display: flex;
+  display: flex;
 }
 
 .myChat {
-    flex-direction: row-reverse;
+  flex-direction: row-reverse;
 }
 
 .titleWrapper {
-    display: flex;
+  display: flex;
 }
 
 .containerLeft {
-    padding: 10px;
+  padding: 10px;
 }
 
 .containerRight {
-    width: 300px;
-    padding: 0 10px;
-    padding-top: 10px;
-    word-wrap: break-word;
+  width: 300px;
+  padding: 0 10px;
+  padding-top: 10px;
+  word-wrap: break-word;
 }
 
 .containerRight .name {
-    padding-right: 10px;
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 12px;
+  padding-right: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
 }
 
 .containerRight .time {
-    color: rgba(0, 0, 0, 0.5);
-    font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
 }
 
 .containerRight .text {
-    padding: 5px;
+  padding: 5px;
 }
 
 .icon img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 
 .formWrapper {
-    display: flex;
+  display: flex;
 }
 
 #chatInput {
-    display: flex;
-    justify-content: center;
-    margin: 50px;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
 }
 
 .formWrapper #text {
-    width: 200px;
-    padding: 5px;
-    margin: 0 5px;
+  width: 200px;
+  padding: 5px;
+  margin: 0 5px;
 }
