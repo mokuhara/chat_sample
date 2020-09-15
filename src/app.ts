@@ -1,4 +1,5 @@
-import firebaseConfig from "./config";
+import { firebaseConfig } from "./config";
+import { AIBot } from "./aiBot";
 
 declare var firebase: any;
 
@@ -224,6 +225,27 @@ const storeNewItem = () => {
   });
 };
 
+const storeChatReplay = () => {
+  const aibot = new AIBot(
+    document.querySelector<HTMLInputElement>("#text").value
+  );
+  const message = aibot.createAIBotReply()!;
+  const chatName = "aibot";
+  const chatIcon =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSpTMMnbfGdDFSGv8Q1eT7wmHeFBIyUitJ7eA&usqp=CAU";
+  message.text.then((text: string) => {
+    if (!text) return;
+    const chatText = text.replace('"', "");
+    const chatIns = new Chat(chatName, chatIcon, chatText);
+    firebaseIns.store({
+      name: chatName,
+      icon: chatIcon,
+      text: chatText,
+      timestamp: chatIns.get().timestamp,
+    });
+  });
+};
+
 const renderAllItem = () => {
   firebaseIns.getAll((chats) => {
     document.querySelector("#channelList ul").innerHTML = "";
@@ -231,6 +253,10 @@ const renderAllItem = () => {
       const chatIns = new Chat(chat.name, chat.icon, chat.text, chat.timestamp);
       const targetElement = document.querySelector("#channelList ul");
       targetElement.appendChild(chatIns.render(accountIns));
+    });
+    const lastElement = document.querySelector("#channelList ul");
+    lastElement.lastElementChild.scrollIntoView({
+      behavior: "smooth",
     });
   });
 };
@@ -258,12 +284,8 @@ chatButton.addEventListener("click", (e) => {
   if (!accountIns || !accountIns.isLoginA())
     return alert("ログインしてください");
   storeNewItem();
+  storeChatReplay();
   renderAllItem();
-  const lastElement = document.querySelector("#channelList ul")
-    .lastElementChild;
-  lastElement.scrollIntoView({
-    behavior: "smooth",
-  });
 });
 
 const signInButton = document.querySelector("#signIn");
